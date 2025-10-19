@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FITROOTS — Nature. Strength. Consciousness.</title>
+  <style>
+    :root {
+      --brand-green: #2e5d45;
+      --brand-gold: #c9ab55;
+      --brand-white: #f9f9f9;
+      --brand-dark: #1a1a1a;
+      --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      color: var(--brand-dark);
+      background: var(--brand-white);
+    }
+    header {
+      background: var(--brand-green);
+      color: var(--brand-white);
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: var(--brand-white);
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    .hero {
+      background: url('hero-image.jpg') no-repeat center center;
+      background-size: cover;
+      color: var(--brand-white);
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      margin: 0 0 20px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin: 0 0 40px;
+    }
+    .btn {
+      background: var(--brand-gold);
+      color: var(--brand-dark);
+      padding: 12px 30px;
+      text-decoration: none;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+    }
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .section.dark {
+      background: var(--brand-green);
+      color: var(--brand-white);
+    }
+    .section h3 {
+      font-size: 2rem;
+      margin-0 0 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 20px;
+    }
+    .grid .card {
+      background: var(--brand-white);
+      padding: 20px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    .grid .card img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+    }
+    footer {
+      background: var(--brand-dark);
+      color: var(--brand-white);
+      text-align: center;
+      padding: 30px 20px;
+    }
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FITROOTS</h1>
+    <nav>
+      <a href="#our-mission">Our Mission</a>
+      <a href="#products">Products</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Nature. Strength. Consciousness.</h2>
+    <p>Fuel your body and mind with premium sea moss, herbal blends and juice cleanses.</p>
+    <a class="btn" href="#products">Shop Now</a>
+  </section>
+
+  <section id="our-mission" class="section">
+    <h3>Our Mission</h3>
+    <p>At FITROOTS we believe in harnessing Earth’s best nutrients to empower your body, clear your mind and elevate your life.</p>
+  </section>
+
+  <section id="products" class="section dark">
+    <h3>Our Products</h3>
+    <div class="grid">
+      <div class="card">
+        <img src="sea-moss.jpg" alt="Sea Moss">
+        <h4>Sea Moss Gel</h4>
+        <p>Natural mineral rich sea moss for holistic health.</p>
+      </div>
+      <div class="card">
+        <img src="juice-cleanse.jpg" alt="Juice Cleanse">
+        <h4>Juice Cleanse</h4>
+        <p>Revitalize with cold-pressed juice blends.</p>
+      </div>
+      <div class="card">
+        <img src="herbal-blend.jpg" alt="Herbal Blend">
+        <h4>Herbal Blends</h4>
+        <p>Potent herbs to support cognition, energy & recovery.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="benefits" class="section">
+    <h3>Why FITROOTS?</h3>
+    <div class="grid">
+      <div class="card">
+        <h4>92+ Essential Minerals</h4>
+        <p>Sea moss supplies 92 of the 102 essential minerals your body needs.</p>
+      </div>
+      <div class="card">
+        <h4>Herbal Intelligence</h4>
+        <p>Beneficial herbs clinically shown to support clarity and energy.</p>
+      </div>
+      <div class="card">
+        <h4>Cold-Pressed Juices</h4>
+        <p>Pure, clean juice for detox & vitality.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>© 2025 FITROOTS. All rights reserved.</p>
+    <p>Follow us on social media: @fitroots</p>
+  </footer>
+
+</body>
+</html>
