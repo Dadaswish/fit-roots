@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FITROOTS — Sea Moss & Herbal Blends</title>
+
+<!-- ====== BASE STYLES ====== -->
+<style>
+  :root{
+    --bg:#0f0f0f;
+    --panel:#171717;
+    --ink:#f7f7f5;
+    --muted:#c9c9c9;
+    --gold:#d9b85a;
+    --green:#79b36a;
+    --accent:#2e5d45;
+    --radius:18px;
+    --shadow:0 20px 60px rgba(0,0,0,.45);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;}
+  img{max-width:100%;height:auto;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(15,15,15,.85);backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid #232323}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+  .brand{display:flex;gap:12px;align-items:center}
+  .brand-logo{width:28px;height:28px;border-radius:999px;background:radial-gradient(65% 65% at 50% 40%, var(--gold), #9c7e35);}
+  .brand h1{margin:0;font-size:18px;letter-spacing:.08em}
+  .nav .links{display:flex;gap:18px}
+  .links a{color:var(--muted);font-size:14px}
+  .links a:hover{color:var(--ink)}
+
+  /* Hero */
+  .hero{padding:72px 0 24px}
+  .hero .card{
+    background:linear-gradient(180deg,#141414, #111);
+    border:1px solid #222;border-radius:var(--radius);box-shadow:var(--shadow);
+    padding:36px; text-align:center;
+  }
+  .kicker{color:var(--gold);letter-spacing:.15em;font-size:12px;margin-bottom:8px;text-transform:uppercase}
+  .hero h2{margin:.2rem 0 8px;font-size:38px}
+  .hero p{margin:0;color:var(--muted)}
+  .cta{display:inline-block;margin-top:18px;background:var(--gold);color:#0b0b0b;padding:10px 16px;border-radius:12px;font-weight:600}
+
+  /* Product sections */
+  section.product{padding:56px 0;border-top:1px solid #1f1f1f}
+  .product .grid{
+    display:grid;gap:28px;align-items:center;
+    grid-template-columns: 1.1fr 1fr;
+  }
+  .product:nth-child(even) .grid{grid-template-columns:1fr 1.1fr}
+  .panel{
+    background:var(--panel);border:1px solid #242424;border-radius:var(--radius);
+    padding:28px;box-shadow:var(--shadow);
+  }
+  .media{position:relative}
+  .media .badge{
+    position:absolute;left:16px;top:16px;background:#111;border:1px solid #2a2a2a;
+    color:var(--gold);padding:6px 10px;border-radius:999px;font-size:12px;letter-spacing:.08em
+  }
+  .title{margin:0 0 6px;font-size:30px;line-height:1.15}
+  .subtitle{margin:0 0 16px;color:var(--muted)}
+  .price-line{display:flex;gap:8px;align-items:baseline;margin:10px 0 18px}
+  .price-line .label{color:var(--muted);font-size:14px}
+  .price{font-size:22px;color:var(--gold);font-weight:700}
+
+  .controls{display:grid;grid-template-columns:1fr 120px;gap:12px;margin:6px 0 12px}
+  select, input[type=number]{
+    width:100%;padding:12px 14px;background:#121212;color:var(--ink);
+    border:1px solid #2c2c2c;border-radius:12px;appearance:none;font-size:15px
+  }
+  .buy{
+    display:flex;gap:12px;align-items:center;margin-top:10px;
+  }
+  .btn{
+    display:inline-flex;justify-content:center;align-items:center;gap:8px;
+    padding:12px 16px;border-radius:12px;border:1px solid #2a2a2a;cursor:pointer;
+    background:linear-gradient(180deg,#1f1f1f,#191919);color:var(--ink);flex:1;font-weight:600
+  }
+  .btn.primary{background:linear-gradient(180deg,var(--gold),#b69949);color:#0a0a0a;border-color:#b08f3e}
+  .btn:hover{filter:saturate(115%) brightness(1.02)}
+  .note{margin:10px 0 0;color:var(--muted);font-size:13px}
+
+  details{margin-top:14px;border-top:1px solid #242424;padding-top:12px}
+  summary{cursor:pointer;color:var(--green);font-weight:700}
+  details p, details li{color:#d9d9d9}
+  ul{margin:10px 0 0 18px}
+
+  footer{margin:56px 0 32px;text-align:center;color:#9c9c9c;font-size:13px}
+
+  /* Responsive */
+  @media (max-width: 900px){
+    .product .grid, .product:nth-child(even) .grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="brand-logo" aria-hidden="true"></div>
+      <h1>FITROOTS</h1>
+    </div>
+    <nav class="links">
+      <a href="#women">Women’s Blend</a>
+      <a href="#lung">Lung Revive</a>
+      <a href="#gorilla">Gorilla Moss</a>
+      <a href="#shop">Shop</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="card">
+        <div class="kicker">Nature • Strength • Consciousness</div>
+        <h2>Wildcrafted Sea Moss & Herbal Infusions</h2>
+        <p>Premium blends crafted to energize your body, sharpen your mind, and keep you rooted in wellness.</p>
+        <a class="cta" href="#shop">Browse Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== PRODUCT 1 ============== -->
+  <section id="women" class="product">
+    <div class="wrap">
+      <div class="grid">
+        <div class="media panel">
+          <span class="badge">Women’s Blend</span>
+          <img src="IMG_7815.png" alt="Women’s Herbal Infused Seamoss Gel">
+        </div>
+        <div class="info panel product-card" data-product="women">
+          <h3 class="title">Women’s Herbal Infused Seamoss Gel</h3>
+          <p class="subtitle">Empower your wellness from the inside out — mineral-dense sea moss with a supportive herbal blend.</p>
+
+          <div class="price-line">
+            <span class="label">Total:</span>
+            <span class="price" id="price-women">$28.99</span>
+          </div>
+
+          <div class="controls">
+            <select id="size-women" aria-label="Choose size">
+              <option value="28.99">8oz — $28.99</option>
+              <option value="47.99">16oz — $47.99</option>
+            </select>
+            <input id="qty-women" type="number" min="1" value="1" aria-label="Quantity">
+          </div>
+
+          <div class="buy">
+            <button class="btn primary" onclick="checkout('women')">Add to Cart</button>
+            <button class="btn" onclick="saveChoice('women')">Save</button>
+          </div>
+          <p class="note">Ships cold. Keep refrigerated. Smooth, delicious gel.</p>
+
+          <details>
+            <summary>Benefits</summary>
+            <ul>
+              <li>Supports hormonal balance and reproductive health</li>
+              <li>Promotes healthy skin, hair, and nails</li>
+              <li>Boosts energy and immunity</li>
+              <li>Aids digestion and detoxification</li>
+              <li>Rich in iodine, iron, calcium, and potassium</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Key Ingredients</summary>
+            <p>Wildcrafted Sea Moss, organic female-supportive herbs, filtered spring water, organic raw honey.</p>
+          </details>
+
+          <details>
+            <summary>How to Use</summary>
+            <p>Take 1–2 tbsp daily. Enjoy straight or mix into smoothies, teas, or meals.</p>
+          </details>
+
+          <details>
+            <summary>Why FITROOTS?</summary>
+            <p>Crafted with integrity and intention to help you stay fit, rooted, and thriving.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== PRODUCT 2 ============== -->
+  <section id="lung" class="product">
+    <div class="wrap">
+      <div class="grid">
+        <div class="info panel product-card" data-product="lung">
+          <h3 class="title">Lung Revive Seamoss Gel (Honey Infused)</h3>
+          <p class="subtitle">Breathe deep, heal naturally — a respiratory-supporting blend for cleansing and clarity.</p>
+
+          <div class="price-line">
+            <span class="label">Total:</span>
+            <span class="price" id="price-lung">$28.99</span>
+          </div>
+
+          <div class="controls">
+            <select id="size-lung" aria-label="Choose size">
+              <option value="28.99">8oz — $28.99</option>
+              <option value="47.99">16oz — $47.99</option>
+            </select>
+            <input id="qty-lung" type="number" min="1" value="1" aria-label="Quantity">
+          </div>
+
+          <div class="buy">
+            <button class="btn primary" onclick="checkout('lung')">Add to Cart</button>
+            <button class="btn" onclick="saveChoice('lung')">Save</button>
+          </div>
+          <p class="note">Helps clear mucus, open airways, and support immunity.</p>
+
+          <details>
+            <summary>Key Benefits</summary>
+            <ul>
+              <li>Supports lung & respiratory health</li>
+              <li>Helps remove mucus & toxins</li>
+              <li>Boosts immune function & oxygen flow</li>
+              <li>Soothes inflammation & irritation</li>
+              <li>Provides 90+ essential minerals</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Main Ingredients</summary>
+            <p>Wildcrafted Sea Moss, Honey, Bladderwrack, Mullein, Nettle, Lobelia, White Horehound, Black Seed, Burdock, Echinacea, Osha Root, Elecampane, Turmeric, Yerba Santa, Peppermint, Licorice, Plantain, and other organic herbs.</p>
+          </details>
+
+          <details>
+            <summary>Suggested Use</summary>
+            <p>1–2 tbsp daily. Straight, in tea, or warm water with lemon.</p>
+          </details>
+
+          <details>
+            <summary>FITROOTS Promise</summary>
+            <p>Crafted to help you breathe better, recover faster, and live clearer — naturally.</p>
+          </details>
+        </div>
+
+        <div class="media panel">
+          <span class="badge">Respiratory Support</span>
+          <img src="IMG_7816.png" alt="Lung Revive Seamoss Gel Honey Infused">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== PRODUCT 3 ============== -->
+  <section id="gorilla" class="product">
+    <div class="wrap">
+      <div class="grid">
+        <div class="media panel">
+          <span class="badge">Men’s Performance</span>
+          <img src="IMG_7809.png" alt="Gorilla Moss Seamoss Gel">
+        </div>
+        <div class="info panel product-card" data-product="gorilla">
+          <h3 class="title">Gorilla Moss Seamoss Gel</h3>
+          <p class="subtitle">Power. Stamina. Focus. A fusion of sea moss with elite adaptogens for masculine vitality.</p>
+
+          <div class="price-line">
+            <span class="label">Total:</span>
+            <span class="price" id="price-gorilla">$28.99</span>
+          </div>
+
+          <div class="controls">
+            <select id="size-gorilla" aria-label="Choose size">
+              <option value="28.99">8oz — $28.99</option>
+              <option value="47.99">16oz — $47.99</option>
+            </select>
+            <input id="qty-gorilla" type="number" min="1" value="1" aria-label="Quantity">
+          </div>
+
+          <div class="buy">
+            <button class="btn primary" onclick="checkout('gorilla')">Add to Cart</button>
+            <button class="btn" onclick="saveChoice('gorilla')">Save</button>
+          </div>
+          <p class="note">Great before workouts or morning routines.</p>
+
+          <details>
+            <summary>Key Benefits</summary>
+            <ul>
+              <li>Boosts energy, strength, and recovery</li>
+              <li>Supports testosterone & libido naturally</li>
+              <li>Improves focus, stamina, and endurance</li>
+              <li>Aids immune & metabolic health</li>
+              <li>Delivers minerals that power muscles & cells</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Main Ingredients</summary>
+            <p>Wildcrafted Sea Moss, Tongkat Ali, Shilajit, Panax Ginseng, Ashwagandha, Rhodiola Rosea, Turmeric, Ginkgo Biloba, Cordyceps, Stinging Nettle.</p>
+          </details>
+
+          <details>
+            <summary>Suggested Use</summary>
+            <p>1 tbsp daily, morning or pre-workout. Mix into smoothies, oatmeal, or enjoy straight.</p>
+          </details>
+
+          <details>
+            <summary>FITROOTS Promise</summary>
+            <p>Made to awaken your primal energy — stronger, sharper, grounded.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP ANCHOR -->
+  <div id="shop" class="wrap" style="padding: 18px 0 42px;">
+    <p style="color:var(--muted);text-align:center">Choose your size and quantity, then tap <strong>Add to Cart</strong>. You can connect these buttons directly to Shopify.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    © 2025 FITROOTS • From the Earth to Your Energy
+  </div>
+</footer>
+
+<!-- ====== JS: pricing + “Add to Cart” routing ====== -->
+<script>
+  const map = {
+    women:  { sizeSel:'#size-women',  qtySel:'#qty-women',  priceEl:'#price-women',
+              links:{ "28.99":"REPLACE_WITH_SHOPIFY_8OZ_LINK_WOMEN", "47.99":"REPLACE_WITH_SHOPIFY_16OZ_LINK_WOMEN" } },
+    lung:   { sizeSel:'#size-lung',   qtySel:'#qty-lung',   priceEl:'#price-lung',
+              links:{ "28.99":"REPLACE_WITH_SHOPIFY_8OZ_LINK_LUNG",  "47.99":"REPLACE_WITH_SHOPIFY_16OZ_LINK_LUNG" } },
+    gorilla:{ sizeSel:'#size-gorilla',qtySel:'#qty-gorilla',priceEl:'#price-gorilla',
+              links:{ "28.99":"REPLACE_WITH_SHOPIFY_8OZ_LINK_GORILLA","47.99":"REPLACE_WITH_SHOPIFY_16OZ_LINK_GORILLA" } }
+  };
+
+  function formatUSD(n){ return Number(n).toFixed(2); }
+
+  // Update totals on change
+  Object.keys(map).forEach(k=>{
+    const size = document.querySelector(map[k].sizeSel);
+    const qty  = document.querySelector(map[k].qtySel);
+    const out  = document.querySelector(map[k].priceEl);
+    function refresh(){
+      const total = parseFloat(size.value) * Math.max(1, parseInt(qty.value||1));
+      out.textContent = '$' + formatUSD(total);
+    }
+    size.addEventListener('change', refresh);
+    qty.addEventListener('input', refresh);
+    refresh();
+  });
+
+  function checkout(key){
+    const cfg = map[key];
+    const sizeVal = document.querySelector(cfg.sizeSel).value;
+    const qtyVal  = Math.max(1, parseInt(document.querySelector(cfg.qtySel).value||1));
+    const baseLink = cfg.links[sizeVal];
+
+    if(!baseLink || baseLink.startsWith('REPLACE_WITH_SHOPIFY')){
+      // Placeholder behavior until you add real Shopify links:
+      alert(`Added ${qtyVal} × ${sizeVal === "28.99" ? "8oz" : "16oz"} to cart. (Connect Shopify link in the code to complete checkout.)`);
+      return;
+    }
+    // If you have real Shopify “Buy Button” or direct checkout links per variant,
+    // you can pass quantity via a query param if your link supports it:
+    // window.location.href = `${baseLink}?quantity=${qtyVal}`;
+    window.location.href = baseLink;
+  }
+
+  // Simple “Save” (persists choice in localStorage)
+  function saveChoice(key){
+    const sizeVal = document.querySelector(map[key].sizeSel).value;
+    const qtyVal  = document.querySelector(map[key].qtySel).value;
+    localStorage.setItem(`fitroots_${key}`, JSON.stringify({size:sizeVal, qty:qtyVal}));
+    const btn = document.activeElement;
+    btn.textContent = 'Saved ✓'; setTimeout(()=>btn.textContent='Save', 1400);
+  }
+  window.saveChoice = saveChoice;
+  window.checkout = checkout;
+</script>
+
+</body>
+</html>
